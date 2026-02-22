@@ -1,0 +1,61 @@
+/* ============================================
+   LANGUAGE SWITCHER
+   ============================================ */
+
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    position: absolute;
+    top: 50%;
+    right: 2.5rem;
+    transform: translateY(-50%);
+}
+
+.lang-switcher__btn {
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    padding: 0.2rem 0.15rem;
+    transition: var(--transition-smooth);
+}
+
+.lang-switcher__btn:hover {
+    color: var(--color-gold-light);
+}
+
+.lang-switcher__btn--active {
+    color: var(--color-gold);
+}
+
+.lang-switcher__divider {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 0.65rem;
+    user-select: none;
+}
+
+/* On home page (over video) */
+.home .lang-switcher {
+    position: fixed;
+    top: 1.6rem;
+    right: 2rem;
+    transform: none;
+    z-index: 10;
+}
+
+@media (max-width: 600px) {
+    .lang-switcher {
+        right: 1rem;
+        top: 1.2rem;
+    }
+
+    .home .lang-switcher {
+        right: 1rem;
+        top: 1.2rem;
+    }
+}

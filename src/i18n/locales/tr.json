@@ -1,0 +1,38 @@
+{
+    "slogan": "Mavinin kıyısında,\nlüksün zirvesinde.",
+    "reserveBtn": "Rezervasyon Yap",
+    "menuBtn": "Menüyü İncele",
+    "discoverBtn": "Paşa'yı Keşfet",
+    "backHome": "← Ana Sayfa",
+    "menuHeroTitle": "Menümüz",
+    "menuHeroDesc": "Taze lezzetler, özenli sunumlar ve Karadeniz'in eşsiz ambiyansı eşliğinde.",
+    "menuFooter": "Fiyat bilgisi için garsonumuza danışınız.",
+    "noItems": "Bu kategoride görsel bulunamadı.",
+    "modal": {
+        "cap1": "Sahil & Mekan Atmosferi",
+        "cap2": "Konaklama & Tesis Tanıtımı",
+        "cap3": "Sıla Kurt ile Paşa",
+        "cap4": "Romantik Anlar",
+        "cap5": "Düğün & Organizasyon",
+        "headline": "Gelenekselleşen Paşa Tecrübesi, Yepyeni Bir Vizyonla Buluşuyor! ✨",
+        "para1": "2008 yılından bu yana Trabzon Akçaabat'ın kalbinde, denizin kıyısında biriktirdiğimiz tecrübeyle; 2025 Ekim ayında yönetimi devraldık ve bizim için asıl hikaye şimdi başlıyor! 👋",
+        "para2": "Kısa sürede biriktirdiğimiz harika anıların ardından, şimdi çıtayı zirveye taşıma zamanı. 2026 sezonunda yenilenen yüzümüz, Akçaabat'ın ruhunu yansıtan modern konseptimiz ve her damak tadına hitap eden eşsiz lezzetlerimizle sizi bekliyoruz. 🚀",
+        "para3": "Burası sadece bir resort değil; en güzel gün batımlarının ve en samimi akşamların adresi. Bu yıl Paşa'da her an bambaşka olacak!",
+        "cta": "Hemen Yerini Ayırt"
+    },
+    "categories": {
+        "kahvalti_": "Kahvaltı",
+        "meze_": "Mezeler",
+        "salata_": "Salatalar",
+        "balik_": "Balıklar",
+        "izgara_": "Izgara",
+        "ana_yemek_": "Ana Yemekler",
+        "makarna_": "Makarna",
+        "gozleme_": "Gözleme",
+        "fast_food_": "Fast Food",
+        "tatli_": "Tatlılar",
+        "icecek_": "İçecekler",
+        "alkol_": "Alkollü",
+        "sezlong": "Plaj"
+    }
+}

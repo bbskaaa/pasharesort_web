@@ -1,0 +1,404 @@
+/* ===========================================
+   DISCOVER MODAL  (prefix: dm__)
+   =========================================== */
+
+.dm__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    animation: dm-fade 0.3s ease;
+}
+
+@keyframes dm-fade {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* ─── Panel ─── */
+.dm__panel {
+    width: 100%;
+    max-width: 860px;
+    max-height: 92vh;
+    background: linear-gradient(160deg, #111 0%, #1a1610 60%, #0d0d0d 100%);
+    border: 1px solid rgba(201, 168, 76, 0.22);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: dm-up 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(201, 168, 76, 0.07);
+}
+
+@keyframes dm-up {
+    from {
+        transform: translateY(28px);
+        opacity: 0
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+/* ─── Header ─── */
+.dm__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.5rem;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.14);
+    background: rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
+}
+
+.dm__logo {
+    height: 34px;
+    width: auto;
+    object-fit: contain;
+}
+
+.dm__header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dm__header .lang-switcher {
+    position: static;
+    transform: none;
+}
+
+.dm__close {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.5);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.72rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.dm__close:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+}
+
+/* ─── Scrollable body ─── */
+.dm__body {
+    overflow-y: auto;
+    flex: 1;
+    padding: 1.4rem 0 1.8rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201, 168, 76, 0.3) transparent;
+}
+
+.dm__body::-webkit-scrollbar {
+    width: 3px
+}
+
+.dm__body::-webkit-scrollbar-thumb {
+    background: rgba(201, 168, 76, 0.35);
+    border-radius: 3px;
+}
+
+/* ═══════════════════════════════════════════
+   9:16  STORY  SLIDER
+═══════════════════════════════════════════ */
+
+.dm__slider-wrap {
+    position: relative;
+    margin-bottom: 1.8rem;
+}
+
+/*
+  Track: flex row, scroll-snap, centered padding so first/last
+  card can be centered when active.
+*/
+.dm__slider-track {
+    display: flex;
+    gap: 0.85rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* side padding = (panel width – card width) / 2  →  handled with padding */
+    padding: 0 calc(50% - (min(65vh, 450px) * 9 / 16 / 2));
+    padding-bottom: 0.5rem;
+}
+
+.dm__slider-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* ─── Individual story card ─── */
+.dm__story-card {
+    flex: 0 0 auto;
+    /* Card width keeps 9:16 ratio at chosen height */
+    width: calc(min(65vh, 450px) * 9 / 16);
+    scroll-snap-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(201, 168, 76, 0.15);
+    transition: transform 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
+    opacity: 0.55;
+    transform: scale(0.93);
+    cursor: pointer;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+.dm__story-card--active {
+    opacity: 1;
+    transform: scale(1);
+    border-color: rgba(201, 168, 76, 0.45);
+    cursor: default;
+}
+
+/* ─── 9:16 video frame ─── */
+.dm__video-frame {
+    width: 100%;
+    /* Height = chosen height constraint */
+    height: min(65vh, 450px);
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #000;
+}
+
+.dm__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ─── Caption below video ─── */
+.dm__video-caption {
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    text-align: center;
+    padding: 0.6rem 0.6rem 0.65rem;
+    background: rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ─── Arrow buttons ─── */
+.dm__arrow {
+    position: absolute;
+    top: calc(min(65vh, 450px) / 2);
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    color: var(--color-gold);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1.35rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    backdrop-filter: blur(4px);
+    z-index: 3;
+}
+
+.dm__arrow:hover:not(:disabled) {
+    background: rgba(201, 168, 76, 0.2);
+    border-color: var(--color-gold);
+}
+
+.dm__arrow:disabled {
+    opacity: 0.2;
+    cursor: default;
+}
+
+.dm__arrow--prev {
+    left: 0.6rem;
+}
+
+.dm__arrow--next {
+    right: 0.6rem;
+}
+
+/* ─── Dots ─── */
+.dm__dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.dm__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(201, 168, 76, 0.2);
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    cursor: pointer;
+    transition: all 0.22s;
+    padding: 0;
+}
+
+.dm__dot--active {
+    background: var(--color-gold);
+    transform: scale(1.25);
+    border-color: var(--color-gold);
+}
+
+.dm__dot:hover:not(.dm__dot--active) {
+    background: rgba(201, 168, 76, 0.45);
+}
+
+/* ═══════════════════════════════════════════
+   STORY TEXT
+═══════════════════════════════════════════ */
+.dm__text-section {
+    max-width: 680px;
+    margin: 0 auto 1.8rem;
+    padding: 0 1.75rem;
+    text-align: center;
+}
+
+.dm__headline {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    font-weight: 600;
+    color: var(--color-gold-light);
+    line-height: 1.45;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.01em;
+}
+
+.dm__para {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: rgba(245, 240, 232, 0.82);
+    line-height: 1.9;
+    margin-bottom: 0.8rem;
+    text-align: left;
+}
+
+/* ═══════════════════════════════════════════
+   CTA
+═══════════════════════════════════════════ */
+.dm__cta-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 0 1.75rem;
+}
+
+.dm__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3rem;
+    height: 52px;
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
+    color: var(--color-anthracite);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.25s;
+    box-shadow: 0 4px 24px rgba(201, 168, 76, 0.4);
+}
+
+.dm__cta:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(201, 168, 76, 0.6);
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE
+═══════════════════════════════════════════ */
+@media (max-width: 600px) {
+    .dm__overlay {
+        padding: 0;
+        align-items: flex-end;
+    }
+
+    .dm__panel {
+        max-width: 100%;
+        border-radius: 16px 16px 0 0;
+        max-height: 94vh;
+    }
+
+    /* On mobile, show a single card at a time (no peek) */
+    .dm__slider-track {
+        padding: 0 0.75rem;
+        gap: 0.6rem;
+    }
+
+    .dm__story-card {
+        /* Full width - padding on mobile */
+        width: calc(100vw - 3rem);
+        scroll-snap-align: center;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .dm__story-card:not(.dm__story-card--active) {
+        opacity: 0.7;
+        transform: scale(0.95);
+    }
+
+    .dm__video-frame {
+        height: 72vh;
+        width: 100%;
+    }
+
+    .dm__story-card {
+        width: calc(100vw - 4rem);
+        max-width: 320px;
+    }
+
+    .dm__arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 1.1rem;
+    }
+
+    .dm__text-section {
+        padding: 0 1rem;
+    }
+
+    .dm__cta {
+        width: 100%;
+        padding: 0 1rem;
+        height: 48px;
+    }
+
+    .dm__cta-wrap {
+        padding: 0 1rem;
+    }
+}

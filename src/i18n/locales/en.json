@@ -1,0 +1,38 @@
+{
+    "slogan": "At the edge of the blue,\nat the pinnacle of luxury.",
+    "reserveBtn": "Make a Reservation",
+    "menuBtn": "View Menu",
+    "discoverBtn": "Discover Pasha",
+    "backHome": "← Home",
+    "menuHeroTitle": "Our Menu",
+    "menuHeroDesc": "Fresh flavors, refined presentations along the unique ambiance of the Black Sea coast.",
+    "menuFooter": "Please ask our staff for pricing information.",
+    "noItems": "No items found in this category.",
+    "modal": {
+        "cap1": "Beach & Venue Atmosphere",
+        "cap2": "Accommodation & Facility Tour",
+        "cap3": "Pasha with Sıla Kurt",
+        "cap4": "Romantic Moments",
+        "cap5": "Wedding & Organization",
+        "headline": "The Pasha Legacy Meets an All-New Vision! ✨",
+        "para1": "With the experience we have accumulated since 2008 at the heart of Trabzon Akçaabat, by the sea; we took over management in October 2025, and the real story begins now! 👋",
+        "para2": "Following the wonderful memories we have already created, it is now time to raise the bar to the summit. In the 2026 season, we welcome you with our renewed face, our modern concept reflecting the spirit of Akçaabat, and our unique flavors for every palate. 🚀",
+        "para3": "This is not just a resort — it's the address of the most beautiful sunsets and the most heartfelt evenings. This year, every moment at Pasha will be extraordinary!",
+        "cta": "Reserve Your Spot Now"
+    },
+    "categories": {
+        "kahvalti_": "Breakfast",
+        "meze_": "Meze",
+        "salata_": "Salads",
+        "balik_": "Seafood",
+        "izgara_": "Grill",
+        "ana_yemek_": "Main Dishes",
+        "makarna_": "Pasta",
+        "gozleme_": "Gözleme",
+        "fast_food_": "Fast Food",
+        "tatli_": "Desserts",
+        "icecek_": "Beverages",
+        "alkol_": "Alcoholic",
+        "sezlong": "Beach"
+    }
+}
