@@ -19,7 +19,7 @@
 
 .admin-login-card {
     width: 100%;
-    max-width: 420px;
+    max-width: 400px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(201, 168, 76, 0.25);
     border-radius: 20px;
@@ -389,13 +389,13 @@
 }
 
 .admin-delete-row {
-    background: rgba(220, 53, 69, 0.1);
-    color: #dc3545;
-    border-color: rgba(220, 53, 69, 0.2);
+    background: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
 }
 
 .admin-delete-row:hover {
-    background: #dc3545;
+    background: #bd2130;
     color: #fff;
     box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
     transform: translateY(-2px);
