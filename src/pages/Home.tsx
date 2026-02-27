@@ -55,7 +55,7 @@ function Home() {
                         className="home__btn home__btn--primary"
                         onClick={() =>
                             window.open(
-                                'https://www.reseliva.com/booknow/Pasa-Tatil-Koyu/?lang=tr',
+                                'https://www.reseliva.com/booknow/Pasha-Resort-Beach-Club/?lang=tr',
                                 '_blank',
                                 'noopener,noreferrer'
                             )

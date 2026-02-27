@@ -175,7 +175,7 @@ export default function DiscoverModal({ onClose }: Props) {
                     {/* ── CTA ── */}
                     <div className="dm__cta-wrap">
                         <a
-                            href="https://www.reseliva.com/booknow/Pasa-Tatil-Koyu/?lang=tr"
+                            href="https://www.reseliva.com/booknow/Pasha-Resort-Beach-Club/?lang=tr"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="dm__cta"
